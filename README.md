@@ -1,3 +1,11 @@
+
+
+# 		Base de datos universitaria 
+
+![](https://github.com/Michael-Chacon/ProyectoBaseDeDatosUniversidad/blob/main/img/DER.png?raw=true)
+
+
+
 ## Consultas sobre una tabla
 
 1. Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre. 
@@ -501,11 +509,14 @@
 1. Devuelve el número total de alumnas que hay. 
 
    ```sql
-   SELECT COUNT(idAlumno) FROM alumno;
+   SELECT COUNT(a.idAlumno) AS 'alumnas'
+   FROM alumno AS a
+   INNER JOIN genero AS g ON a.idGeneroAlu = g.idGenero
+   WHERE g.idGenero = 2;
    +-----------------+
-   | COUNT(idAlumno) |
+   |        alumnas |
    +-----------------+
-   |              12 |
+   |              3 |
    +-----------------+
    ```
 
